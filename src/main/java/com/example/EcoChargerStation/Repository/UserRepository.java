@@ -18,6 +18,7 @@ public class UserRepository implements IUserRepository{
     @PersistenceContext
     private EntityManager em;
 
+    @Transactional
     @Override
     public User GetUserByLogin(String email, String password) throws Exception {
 
