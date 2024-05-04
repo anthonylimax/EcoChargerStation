@@ -18,17 +18,6 @@ public class UserRepository implements IUserRepository{
     @PersistenceContext
     private EntityManager em;
 
-    @Override
-    public User GetUserByLogin(String email, String password) throws Exception {
-
-        var result = em.createQuery("FROM Client WHERE email = :email and password = :password", User.class).setParameter("email", email).setParameter("password", password).getSingleResult();
-        if(result == null){
-            result = em.createQuery("FROM Supplier WHERE email = :email and password = :password", User.class).setParameter("email", email).setParameter("password", password).getSingleResult();
-        }
-        return result;
-    }
-
-
     @Transactional
     @Override
     public void RegisterNewUser(String name, String password, String email, String phone, String userName, String cpf) throws Exception {
@@ -41,21 +30,6 @@ public class UserRepository implements IUserRepository{
                 .setParameter("phone", phone)
                 .setParameter("userName", userName)
                 .setParameter("cpf", cpf);
-        int result = query.executeUpdate();
-        System.out.println(result);
-    }
-    @Transactional
-    @Override
-    public void RegisterNewSupplier(String name, String password, String email, String phone, String userName, String cnpj) throws Exception {
-        String jpql = "INSERT INTO Supplier(email, name, password, phone, userName, cnpj)" +
-                " VALUES (:email, :name, :password, :phone, :userName, :cnpj)";
-        var query = em.createQuery(jpql)
-                .setParameter("email", email)
-                .setParameter("name", name)
-                .setParameter("password", password)
-                .setParameter("phone", phone)
-                .setParameter("userName", userName)
-                .setParameter("cnpj", cnpj);
         int result = query.executeUpdate();
         System.out.println(result);
     }
