@@ -29,34 +29,4 @@ public class UserRepository implements IUserRepository{
     }
 
 
-    @Transactional
-    @Override
-    public void RegisterNewUser(String name, String password, String email, String phone, String userName, String cpf) throws Exception {
-        String jpql = "INSERT INTO Client(email, name, password, phone, userName, cpf)" +
-                " VALUES (:email, :name, :password, :phone, :userName, :cpf)";
-        var query = em.createQuery(jpql)
-                .setParameter("email", email)
-                .setParameter("name", name)
-                .setParameter("password", password)
-                .setParameter("phone", phone)
-                .setParameter("userName", userName)
-                .setParameter("cpf", cpf);
-        int result = query.executeUpdate();
-        System.out.println(result);
-    }
-    @Transactional
-    @Override
-    public void RegisterNewSupplier(String name, String password, String email, String phone, String userName, String cnpj) throws Exception {
-        String jpql = "INSERT INTO Supplier(email, name, password, phone, userName, cnpj)" +
-                " VALUES (:email, :name, :password, :phone, :userName, :cnpj)";
-        var query = em.createQuery(jpql)
-                .setParameter("email", email)
-                .setParameter("name", name)
-                .setParameter("password", password)
-                .setParameter("phone", phone)
-                .setParameter("userName", userName)
-                .setParameter("cnpj", cnpj);
-        int result = query.executeUpdate();
-        System.out.println(result);
-    }
 }
