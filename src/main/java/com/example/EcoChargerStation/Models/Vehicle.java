@@ -1,26 +1,26 @@
 package com.example.EcoChargerStation.Models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import javax.annotation.processing.Generated;
 
 @Entity
 @Table
 public class Vehicle {
 	@Id
-	private String vehicleId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long vehicleId;
 	private String brand;
 	private String model;
 	private String year;
-	private String ownerId;
+	private Long ownerId;
 
-	public String getVehicleId() {
+	public Long getVehicleId() {
 		return vehicleId;
 	}
 
-	public void setVehicleId(String vehicleId) {
+	public void setVehicleId(Long vehicleId) {
 		this.vehicleId = vehicleId;
 	}
 
@@ -48,11 +48,11 @@ public class Vehicle {
 		this.year = year;
 	}
 
-	public String getOwnerId() {
+	public Long getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(String ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
 }
