@@ -1,6 +1,11 @@
 package com.example.EcoChargerStation.Controller;
 
+<<<<<<< HEAD
 import com.example.EcoChargerStation.Dtos.LoginUserDTO;
+=======
+import com.example.EcoChargerStation.Dtos.CreateNewClientDTO;
+import com.example.EcoChargerStation.Models.Supplier;
+>>>>>>> main
 import com.example.EcoChargerStation.Models.User;
 import com.example.EcoChargerStation.Repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +21,7 @@ public class UserController {
     private IUserRepository repository;
 
 
+<<<<<<< HEAD
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody LoginUserDTO login){
         try{
@@ -30,6 +36,19 @@ public class UserController {
         catch(Exception e){
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+=======
+    @PostMapping("/createclient")
+    public ResponseEntity<User> createClient(@RequestBody CreateNewClientDTO login){
+        try{
+            System.out.println(login.cpf() + login.userName());
+            repository.RegisterNewUser(login.name(), login.password(), login.email(),login.phone(), login.userName(),login.cpf());
+
+            return ResponseEntity.status(HttpStatus.CREATED).body(null);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+>>>>>>> main
         }
     }
 
