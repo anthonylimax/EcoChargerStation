@@ -20,7 +20,6 @@ public class UserRepository implements IUserRepository{
 
     @Transactional
     @Override
-<<<<<<< HEAD
     public User GetUserByLogin(String email, String password) throws Exception {
 
         var result = em.createQuery("FROM Client WHERE email = :email and password = :password", User.class).setParameter("email", email).setParameter("password", password).getSingleResult();
@@ -30,8 +29,6 @@ public class UserRepository implements IUserRepository{
         return result;
     }
 
-
-=======
     public void RegisterNewUser(String name, String password, String email, String phone, String userName, String cpf) throws Exception {
         String jpql = "INSERT INTO Client(email, name, password, phone, userName, cpf)" +
                 " VALUES (:email, :name, :password, :phone, :userName, :cpf)";
@@ -45,5 +42,4 @@ public class UserRepository implements IUserRepository{
         int result = query.executeUpdate();
         System.out.println(result);
     }
->>>>>>> main
 }
