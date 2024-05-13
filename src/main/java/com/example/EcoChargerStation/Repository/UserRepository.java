@@ -29,7 +29,6 @@ public class UserRepository implements IUserRepository{
         return result;
     }
 
-
     public void RegisterNewUser(String name, String password, String email, String phone, String userName, String cpf) throws Exception {
         String jpql = "INSERT INTO Client(email, name, password, phone, userName, cpf)" +
                 " VALUES (:email, :name, :password, :phone, :userName, :cpf)";

@@ -1,16 +1,19 @@
 package com.example.EcoChargerStation.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table
+
 public class Recharge {
 	@Id
 	private Long rechargeId;
-	private Long pointId;
-	private Long userId;
+	@ManyToOne
+	@JoinColumn(name = "point_id", referencedColumnName = "id")
+	private Point pointId;
+	@ManyToOne
+	@JoinColumn(name = "client_id", referencedColumnName = "id")
+	private Client client;
 	private String rechargeDate;
 	private double rechargeValue;
 	private boolean availability;
@@ -25,20 +28,20 @@ public class Recharge {
 		this.rechargeId = rechargeId;
 	}
 
-	public Long getPointId() {
+	public Point getPointId() {
 		return pointId;
 	}
 
-	public void setPointId(Long pointId) {
+	public void setPointId(Point pointId) {
 		this.pointId = pointId;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public Client getUserId() {
+		return client;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserId(Client userId) {
+		this.client = userId;
 	}
 
 	public String getRechargeDate() {

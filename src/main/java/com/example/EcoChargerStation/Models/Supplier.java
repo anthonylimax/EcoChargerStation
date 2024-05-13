@@ -11,7 +11,7 @@ import java.util.List;
 public class Supplier extends User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long supplierId;
+	private Long id;
 	private String cnpj;
 
 

@@ -1,33 +1,34 @@
 package com.example.EcoChargerStation.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table
 public class Point {
 	@Id
-	private Long pointId;
-	private Long stationId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	@ManyToOne
+	@JoinColumn(referencedColumnName = "id", name="station_id")
+	private Station stationId;
 	private String connectorType;
 	private double price;
 	private boolean availability;
 
 
 	public Long getPointId() {
-		return pointId;
+		return id;
 	}
 
 	public void setPointId(Long pointId) {
-		this.pointId = pointId;
+		this.id = pointId;
 	}
 
-	public Long getStationId() {
+	public Station getStationId() {
 		return stationId;
 	}
 
-	public void setStationId(Long stationId) {
+	public void setStationId(Station stationId) {
 		this.stationId = stationId;
 	}
 
