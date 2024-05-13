@@ -29,10 +29,11 @@ public class UserController {
                 return ResponseEntity.status(HttpStatus.OK).body(result);
             }
         }
-        catch(Exception e){
+        catch(Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-
+        }
+    }
     @PostMapping("/createclient")
     public ResponseEntity<User> createClient(@RequestBody CreateNewClientDTO login){
         try{

@@ -1,8 +1,6 @@
 package com.example.EcoChargerStation.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,23 +10,30 @@ import java.util.List;
 @Table
 public class Station {
 	@Id
-	private String stationId;
-	private Long addressId;
+	private Long id;
+	@ManyToOne
+	@JoinColumn(referencedColumnName = "id", name = "supplier_id")
+	private Supplier supplier;
+	private String description;
+	private String name;
+	@OneToOne
+	@JoinColumn(name = "address_id", referencedColumnName = "id")
+	private Address addressId;
 
-	public void setStationId(String stationId) {
-		this.stationId = stationId;
+	public void setStationId(Long stationId) {
+		this.id = stationId;
 	}
 
-	public void setAddressId(Long addressId) {
+	public void setAddressId(Address addressId) {
 		this.addressId = addressId;
 	}
 
 
-	public String getStationId() {
-		return stationId;
+	public Long getStationId() {
+		return id;
 	}
 
-	public Long getAddressId() {
+	public Address getAddressId() {
 		return addressId;
 	}
 }

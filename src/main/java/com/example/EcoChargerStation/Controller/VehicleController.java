@@ -15,9 +15,8 @@ public class VehicleController {
     @Autowired
     IVehicleRepository vehicleRepository;
 
-
     @PostMapping("/addvehicle")
-   public ResponseEntity<CreateVehicleDTO> AddVeiculo(@RequestBody CreateVehicleDTO vehicle){
+    public ResponseEntity<CreateVehicleDTO> AddVeiculo(@RequestBody CreateVehicleDTO vehicle){
         try{
             CreateVehicleDTO vehicle1 = vehicleRepository.AddVehicle(vehicle);
             return ResponseEntity.ok().body(vehicle1);
