@@ -1,7 +1,6 @@
 package com.example.EcoChargerStation.Repository;
 
 import com.example.EcoChargerStation.Dtos.CreatePointDTO;
-import com.example.EcoChargerStation.Models.Point;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;

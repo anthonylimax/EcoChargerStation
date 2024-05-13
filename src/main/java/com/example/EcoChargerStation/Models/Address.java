@@ -1,6 +1,5 @@
 package com.example.EcoChargerStation.Models;
 
-
 import jakarta.persistence.*;
 
 @Entity

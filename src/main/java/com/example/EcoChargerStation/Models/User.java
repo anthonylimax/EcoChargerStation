@@ -1,8 +1,6 @@
 package com.example.EcoChargerStation.Models;
 
-
 import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.Table;
 
 @MappedSuperclass
 public abstract class User {

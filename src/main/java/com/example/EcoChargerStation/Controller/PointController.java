@@ -1,6 +1,5 @@
 package com.example.EcoChargerStation.Controller;
 
-
 import com.example.EcoChargerStation.Dtos.CreatePointDTO;
 import com.example.EcoChargerStation.Repository.IPointRepository;
 import org.springframework.beans.factory.annotation.Autowired;

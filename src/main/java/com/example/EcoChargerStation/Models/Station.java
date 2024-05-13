@@ -2,10 +2,6 @@ package com.example.EcoChargerStation.Models;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 @Entity
 @Table
 public class Station {
@@ -13,7 +9,7 @@ public class Station {
 	private Long id;
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id", name = "supplier_id")
-	private Supplier supplier;
+	private Supplier supplierId;
 	private String description;
 	private String name;
 	@OneToOne

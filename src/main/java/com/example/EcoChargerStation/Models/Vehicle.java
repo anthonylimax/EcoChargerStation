@@ -1,9 +1,6 @@
 package com.example.EcoChargerStation.Models;
 
-
 import jakarta.persistence.*;
-
-import javax.annotation.processing.Generated;
 
 @Entity
 @Table
