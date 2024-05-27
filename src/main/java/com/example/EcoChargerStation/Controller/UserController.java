@@ -2,7 +2,6 @@ package com.example.EcoChargerStation.Controller;
 
 import com.example.EcoChargerStation.Dtos.LoginUserDTO;
 import com.example.EcoChargerStation.Dtos.CreateNewClientDTO;
-import com.example.EcoChargerStation.Models.Supplier;
 import com.example.EcoChargerStation.Models.User;
 import com.example.EcoChargerStation.Repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

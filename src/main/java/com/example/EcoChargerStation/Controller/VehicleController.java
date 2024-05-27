@@ -2,7 +2,6 @@ package com.example.EcoChargerStation.Controller;
 
 
 import com.example.EcoChargerStation.Dtos.CreateVehicleDTO;
-import com.example.EcoChargerStation.Models.Vehicle;
 import com.example.EcoChargerStation.Repository.IVehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

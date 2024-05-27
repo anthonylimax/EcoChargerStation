@@ -2,10 +2,6 @@ package com.example.EcoChargerStation.Models;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 @Entity
 @Table
 public class Supplier extends User {
