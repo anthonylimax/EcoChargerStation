@@ -31,7 +31,7 @@ public class UserController {
             return ResponseEntity.ok(userService.login(login.email(), login.password()));
         }
         catch(UserNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorBody(HttpStatus.BAD_REQUEST.name(), e.getMessage()));
         }
     }
 

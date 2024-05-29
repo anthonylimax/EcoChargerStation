@@ -17,9 +17,9 @@ public class UserService {
 
 
     public User login(String email, String password) throws UserNotFoundException {
-        var result = repository.GetUserByLogin(email, password);
-        if(result != null){
-            return result;
+
+        if(repository.ExistAnUserWithThisParams(email, password)){
+            return repository.GetUserByLogin(email, password);
         }
         throw new UserNotFoundException();
     }
