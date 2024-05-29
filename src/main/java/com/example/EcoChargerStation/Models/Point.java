@@ -1,6 +1,7 @@
 package com.example.EcoChargerStation.Models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -11,8 +12,11 @@ public class Point {
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id", name="station_id")
 	private Station stationId;
+	@NotBlank
 	private String connectorType;
+	@NotBlank
 	private double price;
+	@NotBlank
 	private boolean availability;
 
 

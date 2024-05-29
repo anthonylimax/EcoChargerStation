@@ -1,10 +1,14 @@
 package com.example.EcoChargerStation.Models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table
-
+@Getter
+@Setter
 public class Recharge {
 	@Id
 	private Long rechargeId;
@@ -17,54 +21,5 @@ public class Recharge {
 	private String rechargeDate;
 	private double rechargeValue;
 	private boolean availability;
-	
 
-
-	public Long getRechargeId() {
-		return rechargeId;
-	}
-
-	public void setRechargeId(Long rechargeId) {
-		this.rechargeId = rechargeId;
-	}
-
-	public Point getPointId() {
-		return pointId;
-	}
-
-	public void setPointId(Point pointId) {
-		this.pointId = pointId;
-	}
-
-	public Client getUserId() {
-		return client;
-	}
-
-	public void setUserId(Client userId) {
-		this.client = userId;
-	}
-
-	public String getRechargeDate() {
-		return rechargeDate;
-	}
-
-	public void setRechargeDate(String rechargeDate) {
-		this.rechargeDate = rechargeDate;
-	}
-
-	public double getRechargeValue() {
-		return rechargeValue;
-	}
-
-	public void setRechargeValue(double rechargeValue) {
-		this.rechargeValue = rechargeValue;
-	}
-
-	public boolean isAvailability() {
-		return availability;
-	}
-
-	public void setAvailability(boolean availability) {
-		this.availability = availability;
-	}
 }
