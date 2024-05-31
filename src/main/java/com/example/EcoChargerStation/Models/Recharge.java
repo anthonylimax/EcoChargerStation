@@ -11,6 +11,7 @@ import lombok.Setter;
 @Setter
 public class Recharge {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long rechargeId;
 	@ManyToOne
 	@JoinColumn(name = "point_id", referencedColumnName = "id")

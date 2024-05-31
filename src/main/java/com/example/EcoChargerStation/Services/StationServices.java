@@ -2,7 +2,7 @@ package com.example.EcoChargerStation.Services;
 
 
 import com.example.EcoChargerStation.Dtos.CreateStationDTO;
-import com.example.EcoChargerStation.Repository.IStationRepository;
+import com.example.EcoChargerStation.Repository.interfaces.IStationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

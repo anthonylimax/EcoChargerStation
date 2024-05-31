@@ -2,7 +2,6 @@ package com.example.EcoChargerStation.Controller;
 
 import com.example.EcoChargerStation.Dtos.CreatePointDTO;
 import com.example.EcoChargerStation.Exceptions.PointExceptions.IncorrectDataException;
-import com.example.EcoChargerStation.Repository.IPointRepository;
 import com.example.EcoChargerStation.Services.PointServices;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
